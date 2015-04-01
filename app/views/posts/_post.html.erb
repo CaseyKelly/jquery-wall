@@ -1,0 +1,7 @@
+<li>
+  <p>"<%= post.content %>" -<%= post.name %>
+    <p id="upvote-<%= post.id %>"><%= pluralize(post.votes.count, "vote") %>
+    <%= button_to '+1', upvote_post_path(post), method: :post, remote: true %>
+  </p>
+</p>
+</li>
