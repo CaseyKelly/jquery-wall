@@ -2,16 +2,20 @@
 
 <h1>Posts</h1>
 
-<ul id="posts">
-<%= render @posts %>
-</ul>
+<div class='col-md-4'>
+  <%= form_for(@post, remote: true) do |f| %>
+    <p><%= f.label :name %><br>
+    <%= f.text_field :name %>
+    <p><%= f.label :content %><br>
+    <%= f.text_field :content %>
+    <p><%= f.submit class: 'btn btn-info' %>
+  <% end %>
+</div>
+
+<div class="col-md-8">
+  <ul id="posts">
+  <%= render @posts %>
+  </ul>
+</div>
 
 <br>
-
-<%= form_for(@post, remote: true) do |f| %>
-  <p><%= f.label :name %><br>
-  <%= f.text_field :name %>
-  <p><%= f.label :content %><br>
-  <%= f.text_field :content %>
-  <p><%= f.submit %>
-<% end %>

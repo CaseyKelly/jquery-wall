@@ -1,7 +1,13 @@
-<li>
-  <p>"<%= post.content %>" -<%= post.name %>
-    <p id="upvote-<%= post.id %>"><%= pluralize(post.votes.count, "vote") %>
-    <%= button_to '+1', upvote_post_path(post), method: :post, remote: true %>
-  </p>
-</p>
-</li>
+
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">"<%= post.content %>" -<%= post.name %></h3>
+      </div>
+      <div class="panel-body">
+        <p id="upvote-<%= post.id %>"><%= pluralize(post.votes.count, "vote") %>
+        <%= button_to '+1', upvote_post_path(post), class: 'btn btn-success', method: :post, remote: true %>
+      </p>
+      </div>
+    </div>
+</div>
